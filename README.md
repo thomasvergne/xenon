@@ -9,11 +9,9 @@ A powerful programming language with object and functional features
 </p> 
 <br />
 
-```rs
-fn main() {
-  const name: String = "Xenon";
-  print("Hello, " + name);
-}
+```swift
+var name = "Xenon"
+print("Hello " + name)
 ```
 <br />
 
