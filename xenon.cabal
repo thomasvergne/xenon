@@ -24,10 +24,21 @@ executable xenon
     main-is:          Main.hs
 
     -- Modules included in this executable, other than Main.
-    -- other-modules:
+    other-modules:
+      Core.Parser.AST
+      Core.Parser.Location
+      Core.Parser.Parser
 
-    -- LANGUAGE extensions used by modules in this package.
-    -- other-extensions:
-    build-depends:    base ^>=4.14.3.0
+    default-extensions:
+        ConstraintKinds 
+        FlexibleContexts 
+    build-depends:    
+        base ^>=4.14.3.0
+      , parsec
+      , diagnose
+      , containers
+      , semialign
+      , these
+      , mtl
     hs-source-dirs:   app
     default-language: Haskell2010
