@@ -1,0 +1,20 @@
+struct String {
+  var content
+  func init(content) {
+    self.content = content
+  }
+  func to_string() {
+    return "\"" + self.content + "\""
+  }
+}
+
+extension String {
+  func add(str) {
+    return self.content + str.content
+  }
+}
+
+var str = String("Hello")
+str.add(String(" World"))
+print(str.to_string())
+
