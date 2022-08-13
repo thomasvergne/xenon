@@ -5,7 +5,7 @@ module Core.Parser.AST where
     = SStructure String [Located Statement]
     | SFunction String [String] (Located Statement)
     | SSequence [Located Statement]
-    | SAssignment String (Located Expression)
+    | SAssignment String (Maybe (Located Expression))
     | SModification (Located Variable) (Located Expression)
     | SExtension String [Located Statement]
     | SExpression Expression
@@ -28,6 +28,8 @@ module Core.Parser.AST where
     | EProperty (Located Expression) String
     | EUnary String (Located Expression)
     | ELiteral Literal
+    | ELambda [String] (Located Statement)
+    | EIs (Located Expression) (Located Expression)
     | ESelf
     | ETernary (Located Expression) (Located Expression) (Located Expression)
     deriving Show
@@ -37,4 +39,5 @@ module Core.Parser.AST where
     | LInteger Integer
     | LFloat Double
     | LBoolean Bool
+    | LNullable
     deriving Show
