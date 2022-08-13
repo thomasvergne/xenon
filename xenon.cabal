@@ -26,8 +26,10 @@ executable xenon
     -- Modules included in this executable, other than Main.
     other-modules:
       Core.Parser.AST
+      Core.Parser.Core
+        Core.Parser.Core.Lexer
+        Core.Parser.Core.Parser
       Core.Parser.Location
-      Core.Parser.Parser
 
     default-extensions:
         ConstraintKinds 
